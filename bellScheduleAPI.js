@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000; // Cyclic will provide a dynamic port
+const port = process.env.PORT || 3000; // Render will provide a dynamic port
 
 // Define your JSON data
 const data = {
