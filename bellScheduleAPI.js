@@ -1,8 +1,8 @@
-// Install Express first by running: npm install express
+// server.js
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Cyclic will provide a dynamic port
 
 // Define your JSON data
 const data = {
@@ -13,11 +13,12 @@ const data = {
     weekdayBellTimes: ["14:01", "15:20", "15:45", "16:42", "17:40", "18:00", "10:30", null, "11:00", "12:00", "13:00", "13:15", "05:50"]
 };
 
-// Create a simple endpoint to serve the JSON
+// Set up the /bell_schedule route
 app.get('/bell_schedule', (req, res) => {
-    res.json(data);
+    res.json(data);  // Serve the JSON data
 });
 
+// Start the server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
